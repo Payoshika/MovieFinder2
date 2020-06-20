@@ -2,18 +2,24 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import Home from "./Home"
+import Movie from "./Movie"
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
+const NotFound = () => {
+  return <h2>404 not Found</h2>
+}
 
 function App() {
   return (
     <Router>
-      <h2>Movie Finder</h2>
+      <nav class="navbar d-flex justify-content-center">
+        <h2>Movie Finder</h2>
+      </nav>
       <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/about/" component={About} />
-        <Route path="/contact/" component={Contact} />
-        <Route path="/" component={NotFound} />
+        <Route path="/" exact component={Home} />
+        <Route path="/movie/:id" component={Movie} />
+        <Route component= {NotFound} />
       </Switch>
     </Router>
   )
