@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <nav class="navbar d-flex justify-content-center">
-        <h2>Movie Finder</h2>
+        <h2>Movie Finder2</h2>
       </nav>
       <Switch>
         <Route path="/" exact component={Home} />
